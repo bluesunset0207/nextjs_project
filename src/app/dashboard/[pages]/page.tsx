@@ -1,5 +1,5 @@
-export default async function Page({params}:{params:{pages:string}}){
-    const resolvedParams = await params;
+export default function Page({params}:{params:{pages:string}}){
+    const resolvedParams = params;
     return (
         <div>
             <p>param: {resolvedParams.pages}</p>
