@@ -1,13 +1,13 @@
 type PageProps = {
-    params: {
-        pages: string;
-    };
+    params: Promise<{ pages: string }>;
 };
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
+    const resolvedParams = await params;  // await으로 해결
+
     return (
         <div>
-            <p>param: {params.pages}</p>
+            <p>param: {resolvedParams.pages}</p>
         </div>
     );
 }
