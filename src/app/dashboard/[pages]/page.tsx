@@ -1,8 +1,13 @@
-export default function Page({params}:{params:{pages:string}}){
-    const resolvedParams = params;
+type PageProps = {
+    params: {
+        pages: string;
+    };
+};
+
+export default function Page({ params }: PageProps) {
     return (
         <div>
-            <p>param: {resolvedParams.pages}</p>
+            <p>param: {params.pages}</p>
         </div>
-    )
+    );
 }
